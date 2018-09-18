@@ -11,10 +11,6 @@ textarea {
   height: 100px;
   background-color: transparent;
 
-  @media(max-width: $screen-md){
-    font-size: 16px;
-  }
-
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #787886;
   }
@@ -43,10 +39,6 @@ input {
   color: #000;
   padding: 13px 8px 7px 8px;
   font-size: 16px;
-
-  @media(max-width: $screen-md){
-    font-size: 16px;
-  }
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #000;

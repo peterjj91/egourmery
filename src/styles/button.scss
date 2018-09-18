@@ -27,13 +27,6 @@ button {
     border: 2px solid white;
     @include transition(all .2s ease-in-out);
 
-    @media (max-width: $screen-sm){
-      font-size: 14px;
-    }
-    @media (max-width: $screen-md){
-
-    }
-
     &:hover, &:focus {
       color: white;
     }
