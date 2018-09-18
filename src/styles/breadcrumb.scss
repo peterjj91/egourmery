@@ -1,0 +1,87 @@
+
+.breadcrumb {
+  padding: 0;
+  background-color: transparent;
+  margin-bottom: 14px;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+
+  li {
+
+    a {
+      color: #2D7517;
+
+      &:hover, &:focus {
+        color: #2D7517;
+        text-decoration: none;
+      }
+    }
+
+    & + li::before {
+      content: "\e080";
+      display: inline-block;
+      vertical-align: middle;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: rgba(0, 0, 0, 0.4);
+      font-size: 8px;
+      padding-left: 0px;
+      padding-right: 6px;
+      margin: 0px 0px 0px 0px;
+    }
+
+    &.active {
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.pagination {
+  margin: 0;
+  font-size: 12px;
+  line-height: normal;
+
+  li {
+    a {
+      line-height: 18px;
+      padding: 0px 3px;
+      border: none;
+      color: #000;
+
+      &:hover, &:focus {
+        color: #000;
+        background-color: transparent;
+      }
+
+      &[aria-label="Previous"] {
+        padding-left: 0;
+        padding-right: 3px;
+        font-size: 14px;
+      }
+
+      &[aria-label="Next"] {
+        padding-right: 0;
+        padding-left: 3px;
+        font-size: 14px;
+      }
+    }
+
+    &.active {
+      a {
+        background: transparent;
+        font-size: 14px;
+        color: #ff4d00;
+
+        &:hover, &:focus {
+          color: #ff4d00;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
