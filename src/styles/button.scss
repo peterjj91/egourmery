@@ -3,39 +3,36 @@ button {
   border: none;
 }
 
-.btn {
-  border: none;
-  position: relative;
-  z-index: 1;
-  outline: none !important;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 5px;
+form {
+  margin: 0;
+}
 
-  &:active, &:focus {
+.btn {
+  text-transform: uppercase;
+  background-color: $success;
+  border-color: $success;
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+
+  &:hover {
+    background-color: $success;
+    border-color: $success;
     box-shadow: none;
-    outline: 0px;
   }
 
-  &__promo {
-    padding: 10px 20px 11px 20px;
-    font-size: 16px;
-    border-radius: 0px;
-    color: white;
+  &:focus,
+  &.focus {
+    outline: 0;
     box-shadow: none;
-    background-color: transparent;
-    border: 2px solid white;
-    @include transition(all .2s ease-in-out);
+  }
 
-    @media (max-width: $screen-sm){
-      font-size: 14px;
-    }
-    @media (max-width: $screen-md){
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @include box-shadow($btn-active-box-shadow);
+    //background-color: $success;
+    //border-color: $success;
 
-    }
-
-    &:hover, &:focus {
-      color: white;
+    &:focus {
+      @include box-shadow($btn-active-box-shadow);
     }
   }
 }

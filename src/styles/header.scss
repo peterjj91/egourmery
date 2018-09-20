@@ -1,139 +1,128 @@
 
 .header {
   overflow: hidden;
-  height: 82px;
-  padding-top: 20px;
   position: relative;
-  padding-bottom: 17px;
+  background: white;
 
-  @media(max-width: $screen-md){
-
-  }
-  @media(max-width: $screen-sm){
-    height: auto;
-    padding-bottom: 0px;
-    padding-top: 0px;
-  }
-  @media(max-width: $screen-xs){
+  @include media-breakpoint-up(sm) {
 
   }
+  @include media-breakpoint-up(md) {
 
-  &__container {
-    @extend .container;
+  }
+  @include media-breakpoint-up(lg) {
+
+  }
+  @include media-breakpoint-up(xl) {
+
   }
 
   &__main {
+    //height: 96px;
     display: flex;
+    align-content: center;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-size: 0;
+  }
 
-    @media(max-width: $screen-sm){
-      //justify-content: flex-end;
+  &__side {
+    display: flex;
+    align-items: center;
+    height: 96px;
+  }
+
+  &__profile {
+    height: 96px;
+    display: flex;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    margin-left: 39px;
+
+    li {
+      width: 130px;
+      border-left: 1px solid $lighter;
+
+      &:last-child {
+        border-right: 1px solid $lighter;
+      }
+    }
+
+    &__cell {
       display: block;
+      height: 100%;
+      padding-top: 27px;
+    }
+
+    &__icon {
+      display: inline-block;
+      height: 29px;
+      position: relative;
+      fill: $dark;
+    }
+
+    &__circle {
+      position: absolute;
+      top: -8px;
+      right: -17px;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      text-align: center;
+      background-color: $success;
+      color: white;
+      font-size: 12px;
+      line-height: 25px;
+    }
+
+    a {
+      color: $dark;
+    }
+
+    p {
+      margin: 9px 0px 0px 0px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  &__link {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+
+    li {
+      display: inline-block;
+      margin-right: 36px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      color: $dark;
     }
   }
 
   &__logo {
     display: inline-block;
     vertical-align: top;
-
-    @media(max-width: $screen-md){
-
-    }
-    @media(max-width: $screen-sm){
-
-    }
-
-    svg {
-      @media(max-width: $screen-sm){
-        width: 115px;
-        height: 36px;
-      }
-    }
   }
 
   &__info {
-    @media(max-width: $screen-sm){
-      position: relative;
-      margin: 0px -15px;
-      padding: 15px 15px 13px 15px;
-      box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-    }
-  }
 
-  &__client {
-    display: none;
-    position: absolute;
-    transform: translate(0, -50%);
-    top: 50%;
-    right: 16px;
-    font-size: 16px;
-    color: #387427;
-
-    @media(max-width: $screen-sm) {
-      display: block;
-    }
   }
 
   &__nav {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 14px;
-
-    @media(max-width: $screen-sm){
-      padding-top: 11px;
-      font-size: 16px;
-      letter-spacing: 0.3px;
-      overflow: auto;
-      padding-bottom: 11px;
-    }
-
-    li {
-      display: inline-block;
-      margin-right: 41px;
-
-      @media(max-width: $screen-sm){
-        margin-right: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      a {
-        color: black;
-
-        @media(max-width: $screen-sm){
-          display: inline-block;
-          vertical-align: top;
-          padding: 4px 10px 4px 16px;
-        }
-
-        &:hover, &:focus {
-          color: black;
-          text-decoration: none;
-        }
-      }
-    }
-
-    &__wrapper {
-
-
-      @media(max-width: $screen-sm){
-        white-space: nowrap;
-        margin-left: -15px;
-        margin-right: -15px;
-        overflow: hidden;
-      }
-      @media(max-width: $screen-xs){
-
-      }
-    }
+    height: 60px;
+    background-color: $light;
+    border-top: 1px solid $lighter;
+    border-bottom: 1px solid $lighter;
   }
 }

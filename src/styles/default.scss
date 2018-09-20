@@ -8,13 +8,6 @@ body{
   color: black;
   font-size: 14px;
   line-height: normal;
-
-  @media(max-width: $screen-sm){
-    font-size: 13px;
-  }
-  @media(max-width: $screen-xs){
-
-  }
 }
 
 html, body {

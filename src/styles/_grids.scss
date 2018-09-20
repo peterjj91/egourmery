@@ -1,115 +1,194 @@
-//== Media queries breakpoints
+////== Media queries breakpoints
+//// Extra small screen / phone
+////** Deprecated `$screen-xs` as of v3.0.1
+//$screen-xs:                  700px;
+////** Deprecated `$screen-xs-min` as of v3.2.0
+//$screen-xs-min:              $screen-xs;
+////** Deprecated `$screen-phone` as of v3.0.1
+//$screen-phone:               $screen-xs-min;
 //
-//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
-
-// Extra small screen / phone
-//** Deprecated `$screen-xs` as of v3.0.1
-$screen-xs:                  700px;
-//** Deprecated `$screen-xs-min` as of v3.2.0
-$screen-xs-min:              $screen-xs;
-//** Deprecated `$screen-phone` as of v3.0.1
-$screen-phone:               $screen-xs-min;
-
-// Small screen / tablet
-//** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm:                  1050px;
-$screen-sm-min:              $screen-sm;
-//** Deprecated `$screen-tablet` as of v3.0.1
-$screen-tablet:              $screen-sm-min;
-
-// Medium screen / desktop
-//** Deprecated `$screen-md` as of v3.0.1
-$screen-md:                  1300px;
-$screen-md-min:              $screen-md;
-//** Deprecated `$screen-deskrtop` as of v3.0.1
-$screen-desktop:             $screen-md-min;
-
-// Large screen / wide desktop
-//** Deprecated `$screen-lg` as of v3.0.1
-$screen-lg:                  1423px;
-$screen-lg-min:              $screen-lg;
-//** Deprecated `$screen-lg-desktop` as of v3.0.1
-$screen-lg-desktop:          $screen-lg-min;
-
-
-
-//== Grid system
+//// Small screen / tablet
+////** Deprecated `$screen-sm` as of v3.0.1
+//$screen-sm:                  1050px;
+//$screen-sm-min:              $screen-sm;
+////** Deprecated `$screen-tablet` as of v3.0.1
+//$screen-tablet:              $screen-sm-min;
 //
-//## Define your custom responsive grid.
-
-//** Number of columns in the grid.
-$grid-columns:              24;
-//** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         20px;
-// Navbar collapse
-//** Point at which the navbar becomes uncollapsed.
-$grid-float-breakpoint:     $screen-sm-min;
-//** Point at which the navbar begins collapsing.
-$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
-
-
-
-
-//== Container sizes
+//// Medium screen / desktop
+////** Deprecated `$screen-md` as of v3.0.1
+//$screen-md:                  1300px;
+//$screen-md-min:              $screen-md;
+////** Deprecated `$screen-deskrtop` as of v3.0.1
+//$screen-desktop:             $screen-md-min;
 //
-//## Define the maximum width of `.container` for different screen sizes.
+//// Large screen / wide desktop
+////** Deprecated `$screen-lg` as of v3.0.1
+//$screen-lg:                  1463px;
+//$screen-lg-min:              $screen-lg;
+////** Deprecated `$screen-lg-desktop` as of v3.0.1
+//$screen-lg-desktop:          $screen-lg-min;
+//
+//
+////== Grid system
+////** Point at which the navbar becomes uncollapsed.
+//$grid-float-breakpoint:     $screen-sm-min;
+////** Point at which the navbar begins collapsing.
+//$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+//
+//
+////== Container sizes
+//// Small screen / tablet
+//$container-tablet:             (100%);
+////** For `$screen-sm-min` and up.
+//$container-sm:                 $container-tablet;
+//// Medium screen / desktop
+//$container-desktop:            $container-tablet;
+////$container-desktop:            1010px + $grid-gutter-width;
+////** For `$screen-md-min` and up.
+//$container-md:                 $container-desktop;
+//// Large screen / wide desktop
+//$container-large-desktop:      1423px + $grid-gutter-width;
+////** For `$screen-lg-min` and up.
+//$container-lg:                 $container-large-desktop;
 
-// Small screen / tablet
-$container-tablet:             (100%);
-//** For `$screen-sm-min` and up.
-$container-sm:                 $container-tablet;
 
-// Medium screen / desktop
-$container-desktop:            $container-tablet;
-//$container-desktop:            1010px + $grid-gutter-width;
-//** For `$screen-md-min` and up.
-$container-md:                 $container-desktop;
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1406px
+) ;
 
-// Large screen / wide desktop
-$container-large-desktop:      1200px + $grid-gutter-width;
-//** For `$screen-lg-min` and up.
-$container-lg:                 $container-large-desktop;
 
-$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/");
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1423px
+);
 
-@at-root {
-  // Import the fonts
-  @font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.eot'), '#{$icon-font-path}#{$icon-font-name}.eot'));
-    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.eot?#iefix'), '#{$icon-font-path}#{$icon-font-name}.eot?#iefix')) format('embedded-opentype'),
-    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.woff2'), '#{$icon-font-path}#{$icon-font-name}.woff2')) format('woff2'),
-    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.woff'), '#{$icon-font-path}#{$icon-font-name}.woff')) format('woff'),
-    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.ttf'), '#{$icon-font-path}#{$icon-font-name}.ttf')) format('truetype'),
-    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.svg##{$icon-font-svg-id}'), '#{$icon-font-path}#{$icon-font-name}.svg##{$icon-font-svg-id}')) format('svg');
-  }
-}
 
+// main container
 .container {
-  @include container-fixed;
-  max-width: $container-large-desktop;
-  width: 100%;
-  margin: 0 auto;
+  @include media-breakpoint-up(sm) {
 
-  @media (min-width: $screen-sm-min) {
-    width: $container-sm;
   }
-  @media (min-width: $screen-md-min) {
-    width: $container-md;
+  @include media-breakpoint-up(md) {
+
   }
-  @media (min-width: $screen-lg-min) {
-    width: $container-lg;
+  @include media-breakpoint-up(lg) {
+    max-width: 1453px;
   }
-  @media (max-width: $screen-sm) {
-    padding-left: 15px;
-    padding-right: 15px;
+  @include media-breakpoint-up(sm) {
+
   }
 }
 
-$open-sans: 'Open Sans', sans-serif;
 
-$font-family-default: $open-sans;
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:      24;
+$grid-gutter-width: 30px;
 
-$transition-basic: all .2s cubic-bezier(.645,.045,.355,1);
 
-$opacity-main: 0.7;
+// Color system
+$primary:   $blue;
+$secondary: $gray-600;
+$success:   #3CD52E;
+$info:      $cyan;
+$warning:   $yellow;
+$danger:    $red;
+$light:     #F3F5F5;
+$lighter:   #E4E7E7;
+$dark:      #5C5C60;
+$light-easy:#FBFBFB;
+
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $gray-900;
+$yiq-text-light: $white;
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-caret:              true;
+$enable-rounded:            true;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        true;
+$enable-grid-classes:       true;
+$enable-print-styles:       true;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg:                   $white;
+$body-color:                $gray-900;
+
+// Links
+//
+// Style anchor elements.
+$link-color:                theme-color("primary");
+$link-decoration:           none;
+$link-hover-color:          darken($link-color, 15%);
+$link-hover-decoration:     underline;
+
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$btn-border-radius:           0px;
+
+$line-height-lg:              1.5;
+$line-height-sm:              1.5;
+
+$border-width:                1px;
+$border-color:                $gray-300;
+
+$border-radius:               .25rem;
+$border-radius-lg:            .3rem;
+$border-radius-sm:            .2rem;
+
+$box-shadow-sm:               0 .125rem .25rem rgba($black, .075);
+$box-shadow:                  0 .5rem 1rem rgba($black, .15);
+$box-shadow-lg:               0 1rem 3rem rgba($black, .175);
+
+$component-active-color:      $white;
+$component-active-bg:         theme-color("primary");
+
+$caret-width:                 .3em;
+
+$transition-base:             all .2s ease-in-out;
+$transition-fade:             opacity .15s linear;
+$transition-collapse:         height .35s ease;
+
+// form
+$input-border-radius:         0px;
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $success;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+
+
+// text
+$h1-font-size:                $font-size-base * 2.2;
+$h2-font-size:                $font-size-base * 1.8;
+$h3-font-size:                $font-size-base * 1.5;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+// fonts
+$nunito: 'Nunito', sans-serif;
+
+$font-family-default: $nunito;

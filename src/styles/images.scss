@@ -9,11 +9,6 @@
   height: 56px;
   background-image: url("../img/logo_white.svg");
 
-  @media(max-width: $screen-md){
-    width: 80px;
-    height: 25px;
-  }
-
   &:hover, &:focus {
     opacity: 1;
   }

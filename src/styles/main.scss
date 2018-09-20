@@ -1,4 +1,4 @@
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "../../bower_components/bootstrap/scss/bootstrap";
 @import "../../bower_components/bootstrap-select/sass/bootstrap-select";
 @import "../../bower_components/slick-carousel/slick/slick.scss";
 @import "sidr";
@@ -20,6 +20,14 @@
 @import "header";
 @import "footer";
 
+@import "search";
+@import "card";
+@import "step";
+@import "app";
+@import "plus";
+@import "star";
+@import "map";
+@import "partners";
 @import "slider";
 @import "content";
 @import "breadcrumb";

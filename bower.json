@@ -20,7 +20,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
+    "bootstrap": "^4.1.0",
     "bootstrap-select": "^1.13.1",
     "fancybox": "^3.3.5",
     "sidr": "^2.2.1"

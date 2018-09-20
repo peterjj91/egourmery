@@ -1,0 +1,42 @@
+
+.promo-app {
+  background-color: $success;
+  color: white;
+  margin-bottom: 62px;
+
+  * {
+    color: white;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 100px;
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    margin-top: 31px;
+
+    li {
+      margin-right: 25px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    margin-top: -8px;
+    font-weight: 300;
+  }
+
+  &__img {
+    margin-top: -155px;
+  }
+}
