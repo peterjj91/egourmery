@@ -1,35 +1,36 @@
-
-.head-h1 {
-  font-size: 46px;
-  margin-bottom: 20px;
+h1, .h1 {
+  font-size: $h1-font-size;
+  letter-spacing: 0.3px;
+  color: $dark;
+}
+h2, .h2 {
+  font-size: $h2-font-size;
+  letter-spacing: 0.5px;
+  color: $dark;
+}
+h3, .h3 {
+  font-size: $h3-font-size;
+  letter-spacing: 0.3px;
+  color: $dark;
+}
+h4, .h4 {
+  font-size: $h4-font-size;
+  letter-spacing: 0.3px;
+  color: $dark;
+}
+h5, .h5 {
+  font-size: $h5-font-size;
+  letter-spacing: 0.3px;
+  color: $dark;
+}
+h6, .h6 {
+  font-size: $h6-font-size;
+  letter-spacing: 0.3px;
+  color: $dark;
 }
 
-.head-h2 {
-  font-size: 31px;
-  margin-bottom: 20px;
+p {
+  font-size: 16px;
+  line-height: 26px;
+  color: $dark;
 }
-
-.head-h3 {
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-.head-h4 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.head-h5 {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-a {
-  @include transition(all .2s ease-in-out);
-
-  &:hover, &:focus {
-    text-decoration: none;
-    outline: none;
-  }
-}
-

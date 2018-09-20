@@ -1,0 +1,44 @@
+
+.promo-map {
+  position: relative;
+  margin-bottom: 49px;
+
+  .container {
+
+  }
+
+  &__row {
+    display: flex;
+    min-height: 463px;
+    align-items: center;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  &__block {
+    flex: 1;
+    padding: 0px 15px;
+
+    &--content {
+      flex: 0 0 500px;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+
+    &__block {
+      height: 100%;
+    }
+  }
+
+  &__iframe {
+    width: 100%;
+    vertical-align: top;
+    height: 100%;
+  }
+}
